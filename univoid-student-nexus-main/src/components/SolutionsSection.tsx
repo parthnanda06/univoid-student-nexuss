@@ -1,35 +1,39 @@
-import { CheckCircle, Sparkles, TrendingUp } from 'lucide-react';
+import { CheckCircle, Sparkles, TrendingUp } from "lucide-react";
 
 const SolutionsSection = () => {
   const solutions = [
     {
       title: "Unified Communities",
-      description: "All student groups, clubs, and networks in one place"
+      description: "All student groups, clubs, and networks in one place",
     },
     {
       title: "Smart Event Discovery",
-      description: "Never miss important events with AI-powered recommendations"
+      description:
+        "Never miss important events with AI-powered recommendations",
     },
     {
       title: "Resource Library",
-      description: "Centralized access to all academic and career resources"
+      description: "Centralized access to all academic and career resources",
     },
     {
       title: "AI-Powered Mentorship",
-      description: "24/7 guidance from Bandhu AI and peer mentors"
+      description: "24/7 guidance from Bandhu AI and peer mentors",
     },
     {
       title: "Gamified Growth",
-      description: "Track progress and achievements with Void Points"
+      description: "Track progress and achievements with Void Points",
     },
     {
       title: "Local Community Creation",
-      description: "Build and manage your own student communities"
-    }
+      description: "Build and manage your own student communities",
+    },
   ];
 
   return (
-    <section id="solutions" className="section-padding bg-gradient-to-br from-primary/5 to-accent/5">
+    <section
+      id="solutions"
+      className="section-padding bg-gradient-to-br from-primary/5 to-accent/5"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
@@ -37,13 +41,12 @@ const SolutionsSection = () => {
             The UniVoid Solution
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
-            If you're inside UniVoid, you grow faster.
+            "Where students unite, opportunities ignite."
             <br />
-            <span className="text-gradient">If you're outside, you're already behind.</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-            UniVoid unifies communities, events, resources, and AI-powered mentorship 
-            into one powerful platform designed for student success.
+            UniVoid unifies communities, events, resources, and AI-powered
+            mentorship into one powerful platform designed for student success.
           </p>
         </div>
 
@@ -75,7 +78,7 @@ const SolutionsSection = () => {
             Join the Student Success Revolution
           </h3>
           <p className="text-lg md:text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-            Don't let fragmented tools hold you back. Experience the power of 
+            Don't let fragmented tools hold you back. Experience the power of
             unified student life management with UniVoid.
           </p>
           <button className="bg-white text-primary px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105">

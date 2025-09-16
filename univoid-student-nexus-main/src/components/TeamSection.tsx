@@ -5,11 +5,11 @@ const TeamSection = () => {
     {
       name: "Heer Patel",
       role: "Founder & CEO",
-      image: "/team/heer.jpg",
+      image: "/heer.jpg", // make sure /heer.jpg is inside public folder
       bio: "Passionate about transforming student experiences through technology.",
       social: {
         linkedin: "https://www.linkedin.com/in/heer-patel-8b709b335/",
-        twitter: "#",
+        twitter: null,
         instagram:
           "https://www.instagram.com/heer_patel.1036?igsh=MTUxbmNjYzdxaHFjYw%3D%3D&utm_source=qr",
       },
@@ -17,12 +17,12 @@ const TeamSection = () => {
     {
       name: "Parth Bhanushali",
       role: "Co-Founder & CTO",
-      image: "/team/parth.jpg",
+      image: "/Parth.jpg", // make sure /Parth.jpg is inside public folder
       bio: "AI and full-stack expert building the future of education.",
       social: {
         linkedin: "https://www.linkedin.com/in/parth-bhanushali-838046275/",
-        twitter: "#",
-        instagram: "https://www.instagram.com/bhanushali_parth_6/", // <-- replace with actual
+        twitter: null,
+        instagram: "https://www.instagram.com/bhanushali_parth_6/",
       },
     },
   ];
@@ -52,13 +52,17 @@ const TeamSection = () => {
 
         {/* Team Members */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => (
-            <div key={index} className="card-elevated text-center group">
+          {team.map((member) => (
+            <div key={member.name} className="card-elevated text-center group">
               <div className="relative mb-6">
                 <img
                   src={member.image}
                   alt={member.name}
                   className="w-32 h-32 rounded-full mx-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.currentTarget.src =
+                      "https://via.placeholder.com/150?text=No+Image";
+                  }}
                 />
                 <div className="absolute inset-0 w-32 h-32 rounded-full mx-auto bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
               </div>
@@ -73,30 +77,36 @@ const TeamSection = () => {
 
               {/* Social Icons */}
               <div className="flex justify-center space-x-4">
-                <a
-                  href={member.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href={member.social.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
-                >
-                  <Twitter className="w-4 h-4" />
-                </a>
-                <a
-                  href={member.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
-                >
-                  <Instagram className="w-4 h-4" />
-                </a>
+                {member.social.linkedin && (
+                  <a
+                    href={member.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                )}
+                {member.social.twitter && (
+                  <a
+                    href={member.social.twitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                )}
+                {member.social.instagram && (
+                  <a
+                    href={member.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full bg-primary/10 hover:bg-primary hover:text-white transition-all duration-200"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                )}
               </div>
             </div>
           ))}
